@@ -1,7 +1,10 @@
-import peewee
+import telebot
+from token_info import token
 
-db = peewee.sqlite3('data.db')
+bot = telebot.TeleBot(token)
 
+@bot.message_handler()
+def start(message:telebot.types.Message):
+    bot.send_message(message.chat.id, message.text)
 
-class User(peewee.Model):
-    pass
+bot.infinity_polling()

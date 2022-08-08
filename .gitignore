@@ -1,1 +1,4 @@
 data.db
+/venv
+/.idea
+token_info
